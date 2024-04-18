@@ -31,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+
+
+#canvas{
+  -webkit-tap-highlight-color: rgba(175, 28, 72, 0);
+}
