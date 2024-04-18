@@ -18,7 +18,7 @@ example 2: if freez point equal :7.9 and you guess 8 you will win
 
 ## screen 
 Home page
- ![Text Coverage](https://github.com/MhHusam/GuessGame/tree/main/screen)
+ ![Text Coverage](https://github.com/MhHusam/GuessGame/tree/main/screen.png)
  
- 
+ ![Text Coverage](https://github.com/MhHusam/assignment/blob/main/screensshots/Vite-React-TS%20(5).png)
  
