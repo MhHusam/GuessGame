@@ -16,7 +16,9 @@ about the game : it's guess game you will guess where the graph line will freez 
 example 1: if freez point equal :7.4 and you guess 7 you will win 
 example 2: if freez point equal :7.9 and you guess 8 you will win 
 
- ![Text Coverage](https://github.com/MhHusam/assignment/blob/main/screensshots/homepage.png](https://github.com/MhHusam/GuessGame/blob/main/screen/home.png))
+## screen 
+Home page
+ ![Text Coverage](https://github.com/MhHusam/GuessGame/tree/main/screen)
  
  
  
