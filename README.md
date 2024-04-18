@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the  server:
+First, run the server:
 npm i inside server folder 
 npm start 
 
@@ -10,7 +10,7 @@ Second :
 npm i inside project folder 
 run the project npm run dev 
 
-
+Game Ruls
 about the game : it's guess game you will guess where the graph line will freez on which point , and if your choice near to freez point you will win otherwise you will lose 
 
 example 1: if freez point equal :7.4 and you guess 7 you will win 
