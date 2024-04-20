@@ -1,5 +1,9 @@
 import type { Config } from "tailwindcss";
 
+interface Keyframes {
+  [key: string]: Record<string, string | number>;
+}
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -37,16 +41,16 @@ const config: Config = {
       },
       animation: {
         fade: "fadeOut 0.7s ease-in-out",
-     
       },
-      keyframes: () => ({
+      keyframes: (Keyframes) => ({
         fadeOut: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       }),
     },
   },
   plugins: [],
 };
+
 export default config;
