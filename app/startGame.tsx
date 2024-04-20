@@ -21,21 +21,9 @@ function StartGame() {
   const totalBalance = useSelector((state: any) => state.Game.totalBalance);
   const multiplier = useSelector((state: any) => state.Game.multiplier);
   const points = useSelector((state: any) => state.Game.points);
+  const speedValue = useSelector((state: any) => state.Game.speedLevel);
 
   const runGame = () => {
-    dispatch(setStatusGame(true));
-    const newFreezValue = generateGuessValue(1, 10);
-
-    dispatch(setfreezValue(newFreezValue));
-
-    dispatch(setUpdateBalanceValue(totalBalance - points));
-    const generatedPlayers = PlayersGenerator(
-      points,
-      multiplier,
-      newFreezValue
-    );
-    dispatch(setUsersRanking(generatedPlayers));
-
     if (totalBalance === 0) {
       if (
         confirm(
@@ -45,10 +33,36 @@ function StartGame() {
         dispatch(setUpdateBalanceValue(1000));
         dispatch(setMultiplierValue(1));
         dispatch(setPointsValue(50));
+        return;
       } else {
-        location.reload();
+        return;
       }
     }
+    if (points > totalBalance) {
+      alert("you don't have enough  point select less points ");
+      return;
+    }
+
+    dispatch(setStatusGame(true));
+    const newFreezValue = generateGuessValue(1, 10);
+
+    dispatch(setfreezValue(newFreezValue));
+
+    // dispatch(setUpdateBalanceValue(totalBalance - points));
+    const generatedPlayers = PlayersGenerator(
+      points,
+      multiplier,
+      newFreezValue
+    );
+    dispatch(setUsersRanking(generatedPlayers));
+
+    setTimeout(() => {
+      if (Math.round(multiplier) === Math.round(newFreezValue)) {
+        dispatch(setUpdateBalanceValue(totalBalance + points * multiplier));
+      } else {
+        dispatch(setUpdateBalanceValue(totalBalance - points));
+      }
+    }, 3000 + Math.min(1000 * speedValue, 50000) );
   };
 
   return (
